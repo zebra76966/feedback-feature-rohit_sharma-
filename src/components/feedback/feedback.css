@@ -1,0 +1,299 @@
+/* SHARE HAM */
+.shareBtn {
+  border: none;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+  margin: 4px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item > .icon {
+  border: 2px solid transparent;
+  border-radius: 100%;
+}
+
+#wrapperShare {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+#toggler {
+  padding: 10px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  grid-row-gap: 1px;
+}
+#toggler div {
+  background-color: #333;
+}
+#a,
+#b,
+#c,
+#d {
+  opacity: 0;
+  /* background: white; */
+  transition: all 0.4s ease-in-out;
+}
+#a {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+#b {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+#c {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+
+#d {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+
+#wrapperShare.active {
+  width: 250px !important;
+  float: right;
+  height: 250px !important;
+}
+
+#wrapperShare.formActive {
+  width: 250px !important;
+  float: right;
+  height: 50px !important;
+}
+#toggler.active + #a {
+  bottom: 120%;
+}
+#toggler.active + #a + #b {
+  bottom: 90%;
+}
+#toggler.active + #a + #b + #c {
+  bottom: 60%;
+}
+#toggler.active + #a + #b + #c + #d {
+  bottom: 30%;
+}
+
+#toggler.active ~ div {
+  opacity: 1 !important;
+}
+.item {
+  cursor: pointer;
+}
+
+.item:hover > .toolTip {
+  background-color: #1a1a1a !important;
+  color: white !important;
+}
+
+.activeFormBtn,
+.item:hover > .icon {
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #ffffff !important;
+  color: white !important;
+}
+
+/* #toggler.active>.bar1{
+  transform: translate(0, 17px) rotate(-45deg);
+}
+#toggler.active>.bar2{
+  opacity:0;
+}
+#toggler.active>.bar3{
+  transform: translate(0, -17px) rotate(45deg);
+} */
+
+.toolTip {
+  display: none;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggler.active + #a > .toolTip,
+#toggler.active + #a + #b > .toolTip,
+#toggler.active + #a + #b + #c > .toolTip,
+#toggler.active + #a + #b + #c + #d > .toolTip {
+  opacity: 1;
+  display: block;
+}
+
+.shareBtn.active {
+  animation: spin 0.4s forwards ease-in;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+#toggler.formActive + #a {
+  bottom: 0 !important;
+  right: 120% !important;
+}
+#toggler.formActive + #a + #b {
+  bottom: 0 !important;
+  right: 90% !important;
+}
+#toggler.formActive + #a + #b + #c {
+  bottom: 0 !important;
+  right: 60% !important;
+}
+
+#toggler.formActive + #a + #b + #c + #d {
+  bottom: 0 !important;
+  right: 30% !important;
+}
+
+#toggler.formActive + #a .toolTip,
+#toggler.formActive + #a + #b .toolTip,
+#toggler.formActive + #a + #b + #c .toolTip,
+#toggler.formActive + #a + #b + #c + #d .toolTip {
+  opacity: 0;
+  display: none;
+}
+
+/* tablet / mobile view */
+
+.customModal.pop {
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 900px) {
+  .customModal.pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .formBox {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    border-radius: 10px 10px 0 0;
+    padding: 8px;
+    height: 60vh;
+    width: 100%;
+    opacity: 0;
+    background-color: white;
+  }
+  .formBox.active {
+    animation: slide-up 0.5s ease-in-out forwards;
+    opacity: 1;
+  }
+
+  .pop-box.active {
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    bottom: unset !important  ;
+    right: unset !important;
+  }
+
+  .toolTip {
+    display: none;
+  }
+
+  #toggler.formActive + #a {
+    bottom: 0 !important;
+    right: 100% !important;
+  }
+  #toggler.formActive + #a + #b {
+    bottom: 0 !important;
+    right: 75% !important;
+  }
+  #toggler.formActive + #a + #b + #c {
+    bottom: 0 !important;
+    right: 50% !important;
+  }
+
+  #toggler.formActive + #a + #b + #c + #d {
+    bottom: 0 !important;
+    right: 25% !important;
+  }
+
+  #wrapperShare.formActive {
+    margin-left: 10%;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+#sbubble {
+  position: absolute;
+  right: 0%;
+  display: inline-block;
+  bottom: 70px;
+  animation: 1s fade-out 5s ease-out forwards;
+}
+.bubble {
+  position: relative;
+  background-color: white;
+  width: 370px;
+}
+
+.bubble::after {
+  display: block;
+  position: absolute;
+  width: 0;
+  content: "";
+  border: 15px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  bottom: -10px;
+  right: calc(5% - 10px);
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

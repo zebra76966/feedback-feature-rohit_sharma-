@@ -1,3 +1,7 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.bg-black {
+  background-color: rgb(17, 17, 17);
+}
+
+.bg-info {
+  background-color: #a9d9ff !important;
+}
+
+.btn-info {
+  background-color: #a9d9ff !important;
+}
+
+.rateModal {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
 }

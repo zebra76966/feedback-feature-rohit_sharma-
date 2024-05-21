@@ -1,0 +1,98 @@
+.form-desk {
+  max-height: 500px;
+  max-width: 400px;
+  overflow-y: auto;
+  border-radius: 10px;
+  animation: fade-in 0.4s ease-in forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.inputbg {
+  background-color: #e0e0e0;
+}
+.inputbg-dark {
+  background: #bdbdbd;
+}
+
+.border-muted {
+  border-color: #999999 !important;
+}
+
+option:hover {
+  background: #999999 !important;
+}
+.dropdown {
+  color: #333333 !important;
+}
+
+.dropdown .btn {
+  background-color: #e0e0e0;
+  color: #333333 !important;
+  font-weight: 500;
+}
+.dropdown-menu {
+  max-height: 300px !important;
+  background-color: #e0e0e0;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+.dropdown-menu .dropdown-item:hover {
+  background-color: #cccccc !important;
+}
+.dropdown-menu > li:not(:last-child) {
+  border-bottom: 1px solid #999999;
+}
+.no-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.no-scroll::-webkit-scrollbar-track {
+  background: rgb(201, 200, 200);
+}
+.no-scroll::-webkit-scrollbar-thumb {
+  background-color: #999999;
+  border-radius: 10px;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.thinScroll::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
+  background-color: rgb(212, 212, 212);
+}
+
+.thinScroll:hover::-webkit-scrollbar {
+  transition: all 0.2s ease-in-out;
+  height: 5px;
+}
+
+.thinScroll::-webkit-scrollbar-thumb {
+  background-color: #999999;
+  width: 5px;
+}
+
+@media only screen and (max-width: 900px) {
+  .form-desk {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.text-secondary {
+  color: #4d4d4d !important;
+}
+
+.form-check-input:checked {
+  background-color: #303030;
+  border-color: #2b2b2b;
+}
